@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.carmel.wcampaigner.controller.CampaignsController"
+            prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Menu">
+                    <items>
+                        <MenuItem fx:id="goToContacts" mnemonicParsing="false" onAction="#mainMenuClickHandler"
+                                  text="Contacts"/>
+                        <MenuItem fx:id="goToGroups" mnemonicParsing="false" onAction="#mainMenuClickHandler"
+                                  text="Groups"/>
+                        <MenuItem mnemonicParsing="false" text="Exit"/>
+                    </items>
+                </Menu>
+            </menus>
+            <cursor>
+                <Cursor fx:constant="DEFAULT"/>
+            </cursor>
+        </MenuBar>
+        <Label layoutY="30.0" maxHeight="30.0" minHeight="30.0" prefHeight="30.0"
+               style="-fx-background-color: #32BDD272;" text="Campaigns" textFill="#655c5c" AnchorPane.leftAnchor="0.0"
+               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+            <padding>
+                <Insets left="20.0" right="20.0"/>
+            </padding>
+        </Label>
+        <SplitPane dividerPositions="0.19797979797979795" layoutY="60.0" prefHeight="160.0" prefWidth="200.0"
+                   AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                   AnchorPane.topAnchor="60.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                    <children>
+                        <TextField layoutX="2.0" layoutY="2.0" promptText="Search" AnchorPane.leftAnchor="4.0"
+                                   AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="4.0"/>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="151.0" layoutY="6.0" pickOnBounds="true"
+                                   preserveRatio="true" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="6.0">
+                            <image>
+                                <Image url="@../icons/search-icon.png"/>
+                            </image>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </ImageView>
+                        <ListView fx:id="campaignsListView" layoutY="37.0" prefHeight="121.0" prefWidth="175.0"
+                                  AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0"
+                                  AnchorPane.topAnchor="36.0"/>
+                    </children>
+                </AnchorPane>
+                <AnchorPane>
+                    <children>
+                        <VBox layoutX="109.0" layoutY="-7.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <MenuBar style="-fx-background-color: #32BDD2;">
+                                    <menus>
+                                        <Menu mnemonicParsing="false" text="Add" />
+                                        <Menu mnemonicParsing="false" text="Import" />
+                                        <Menu mnemonicParsing="false" text="Sync">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Phone" />
+                                                <MenuItem mnemonicParsing="false" text="Gmail" />
+                                            </items>
+                                        </Menu>
+                                    </menus>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </MenuBar>
+                                <AnchorPane>
+                                    <children>
+                                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="4.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="4.0">
+                                            <image>
+                                                <Image url="@../icons/edit.png" />
+                                            </image>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                        </ImageView>
+                                    </children>
+                                </AnchorPane>
+                                <ScrollPane hbarPolicy="NEVER">
+                                    <content>
+                                        <AnchorPane>
+                                            <children>
+                                                <Label layoutY="6.0" styleClass="fieldLabel" text="User Id" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0" />
+                                                <Label layoutY="6.0" styleClass="fieldValue" text="#23UI78" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="22.0" />
+                                                <Label layoutY="6.0" styleClass="fieldLabel" text="Name" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="48.0" />
+                                                <Label layoutY="6.0" styleClass="fieldValue" text="Mx J Doe" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="66.0" />
+                                                <Label layoutY="6.0" styleClass="fieldLabel" text="Phone 1" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="96.0" />
+                                                <Label layoutY="6.0" styleClass="fieldValue" text="8888888888" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="114.0" />
+                                                <Label layoutY="6.0" styleClass="fieldLabel" text="Phone 2" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="144.0" />
+                                                <Label layoutY="6.0" styleClass="fieldValue" text="7777777777" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="162.0" />
+                                                <Label layoutY="6.0" styleClass="fieldLabel" text="Phone 3" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="192.0" />
+                                                <Label layoutY="6.0" styleClass="fieldValue" text="6666666666" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="210.0" />
+                                                <Label layoutY="6.0" styleClass="fieldLabel" text="Notes" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="240.0" />
+                                                <Label layoutY="6.0" maxWidth="700.0" styleClass="fieldValue" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet aliquet massa, ac congue eros. In ut quam a dolor dapibus tincidunt. Maecenas ac arcu ac velit dictum faucibus non ut sem. Ut sit amet quam dictum, sodales elit eget, hendrerit quam. Donec nec velit libero. Phasellus vel imperdiet lacus, vitae posuere magna. Vestibulum nec rhoncus massa, ac mollis purus. Pellentesque sed dolor felis. " textOverrun="WORD_ELLIPSIS" wrapText="true" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="258.0" />
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </ScrollPane>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>
